@@ -1,15 +1,17 @@
+
 .overallContainer {
     border: 2px solid black;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
     padding: 10px;
-    margin-left: 135px;
-    margin-right: 135px;
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right: 50%;
     align-items: center;
     flex-shrink: 1;
     width: 102.43px;
-    height: 160px;
+    height: 155px;
 }
 
 .display {
