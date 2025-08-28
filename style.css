@@ -1,0 +1,37 @@
+.overallContainer {
+    border: 2px solid black;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+}
+
+.operatorButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+.nonOperatorButtons {
+    display: flex;
+    flex-direction: column;
+}
+
+.firstRowNumbers {
+    display: flex;
+}
+
+.secondRowNumbers {
+    display: flex;
+}
+
+.thirdRowNumbers {
+    display: flex;
+}
+
+.fourthRowButtons {
+    display: flex;
+}
+
