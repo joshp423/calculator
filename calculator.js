@@ -39,11 +39,67 @@ const operators = document.querySelectorAll('.operatorButtons');
 operators.forEach((button) => {
     button.addEventListener('click', (event) => {
         operator = event.target.innerText;
+        event.target.style.backgroundColor = "Green"
         equationStage = 2;
         console.log(operator, equationStage)
     });
 });
 
+const equals = document.getElementById('equals');
+equals.addEventListener('click', (event) => {
+    let answer;
+    equationStage = 0;
+    switch(operator) {
+        case "x":
+            answer = Number(firstNumber) * Number(secondNumber);
+            if (answer.toString().length >= 9) {
+                display.innerText = answer.toFixed(10);
+                firstNumber = answer;
+                secondNumber = 0
+                break;
+            }
+            display.innerText = answer
+            firstNumber = answer;
+            secondNumber = 0
+            break;
+        case "÷":
+            answer = Number(firstNumber) / Number(secondNumber);
+            if (answer.toString().length >= 9) {
+                display.innerText = answer.toFixed(10);
+                firstNumber = answer;
+                secondNumber = 0
+                break;
+            }
+            display.innerText = answer
+            firstNumber = answer;
+            secondNumber = 0
+            break;     
+        case "-":
+            answer = Number(firstNumber) - Number(secondNumber);
+            if (answer.toString().length >= 9) {
+                display.innerText = answer.toFixed(10);
+                firstNumber = answer;
+                secondNumber = 0
+                break;
+            }
+            display.innerText = answer
+            firstNumber = answer;
+            secondNumber = 0
+            break;
+        case "+":
+            answer = Number(firstNumber) + Number(secondNumber);
+            if (answer.toString().length >= 9) {
+                display.innerText = answer.toFixed(10);
+                firstNumber = answer;
+                secondNumber = 0
+                break;
+            }
+            display.innerText = answer
+            firstNumber = answer;
+            secondNumber = 0
+            break;
+    }
+});
 function numberSet(numberSelected, firstNumber, secondNumber, equationStage) {
     if (!firstNumber) {
         firstNumber = numberSelected;
