@@ -9,19 +9,31 @@
     align-items: center;
     flex-shrink: 1;
     width: 102.43px;
-    height: 150px;
+    height: 160px;
 }
 
 .display {
-    width: 102.43px;
-    height: 23.33px;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     border: 1px solid black;
     border-radius: 4px;
+    margin: 0px;
+}
+
+#displayBox {
+    width: 102.43px;
+    height: 30px;
+    margin: 0px;
+    text-align: center;
+    line-height: 30px;
 }
 .buttons {
     display: flex;
     flex-direction: column;
     margin: 10px;
+    margin-top: 5px;
 }
 
 .utilityButtons {
@@ -62,7 +74,11 @@
 }
 
 #C {
-    width: 65.9px;
+    width: 51.02px;
+}
+
+#backspace {
+    width: 51.02px;
 }
 
 #equals {
