@@ -3,20 +3,45 @@
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    margin-left: 135px;
+    margin-right: 135px;
+    align-items: center;
+    flex-shrink: 1;
+    width: 102.43px;
+    height: 150px;
 }
 
+.display {
+    width: 102.43px;
+    height: 23.33px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
 .buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.utilityButtons {
     display: flex;
 }
 
 .operatorButtons {
     display: flex;
     flex-direction: column;
+    justify-content: end;
 }
 
-.nonOperatorButtons {
+.numbersAndOperators {
+    display: flex;
+}
+
+.leftButtons {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .firstRowNumbers {
@@ -33,5 +58,27 @@
 
 .fourthRowButtons {
     display: flex;
+
 }
+
+#C {
+    width: 65.9px;
+}
+
+#equals {
+    padding-left: 6.61px;
+    padding-right: 6.61px;
+}
+
+#decimal {
+    padding-left: 8.85px;
+    padding-right: 8.85px;
+}
+button {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
 
