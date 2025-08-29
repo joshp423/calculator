@@ -54,8 +54,8 @@ equals.addEventListener('click', (event) => {
     switch(operator) {
         case "x":
             answer = Number(firstNumber) * Number(secondNumber);
-            if (answer.toString().length >= 9) {
-                display.innerText = answer.toFixed(10);
+            if (answer.toString().length >= 7) {
+                display.innerText = answer.toFixed(8);
                 firstNumber = answer;
                 secondNumber = 0
                 break;
@@ -66,8 +66,8 @@ equals.addEventListener('click', (event) => {
             break;
         case "÷":
             answer = Number(firstNumber) / Number(secondNumber);
-            if (answer.toString().length >= 9) {
-                display.innerText = answer.toFixed(10);
+            if (answer.toString().length >= 7) {
+                display.innerText = answer.toFixed(8);
                 firstNumber = answer;
                 secondNumber = 0
                 break;
@@ -78,8 +78,8 @@ equals.addEventListener('click', (event) => {
             break;     
         case "-":
             answer = Number(firstNumber) - Number(secondNumber);
-            if (answer.toString().length >= 9) {
-                display.innerText = answer.toFixed(10);
+            if (answer.toString().length >= 7) {
+                display.innerText = answer.toFixed(8);
                 firstNumber = answer;
                 secondNumber = 0
                 break;
@@ -90,8 +90,8 @@ equals.addEventListener('click', (event) => {
             break;
         case "+":
             answer = Number(firstNumber) + Number(secondNumber);
-            if (answer.toString().length >= 9) {
-                display.innerText = answer.toFixed(10);
+            if (answer.toString().length >= 7) {
+                display.innerText = answer.toFixed(8);
                 firstNumber = answer;
                 secondNumber = 0
                 break;
