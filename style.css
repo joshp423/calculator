@@ -18,19 +18,25 @@
     height: min-content;
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid black;
     border-radius: 4px;
     margin: 0px;
+    width: 102.03px;
 }
 
 #displayBox {
-    width: 102.43px;
+    width: 88.65px;
     height: 30px;
     margin: 0px;
     text-align: center;
     line-height: 30px;
 }
+
+#operatorSignal {
+    padding-right: 5px;
+}
+
 .buttons {
     display: flex;
     flex-direction: column;
@@ -98,5 +104,7 @@ button {
     padding-left: 7px;
     padding-right: 7px;
 }
-
+p {
+    margin: 0px;
+}
 

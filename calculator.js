@@ -4,6 +4,7 @@ let equationStage = 0;
 let operator;
 
 const display = document.getElementById('displayBox');
+const operatorDisplay = document.getElementById('operatorSignal')
 
 const numbers = document.querySelectorAll(".numbers");
 numbers.forEach((button) => {
@@ -39,8 +40,8 @@ const operators = document.querySelectorAll('.operatorButtons');
 operators.forEach((button) => {
     button.addEventListener('click', (event) => {
         operator = event.target.innerText;
-        event.target.style.backgroundColor = "Green"
         equationStage = 2;
+        operatorDisplay.innerText = operator
         console.log(operator, equationStage)
     });
 });
@@ -49,6 +50,7 @@ const equals = document.getElementById('equals');
 equals.addEventListener('click', (event) => {
     let answer;
     equationStage = 0;
+    operatorDisplay.innerText = ""
     switch(operator) {
         case "x":
             answer = Number(firstNumber) * Number(secondNumber);
