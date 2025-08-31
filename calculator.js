@@ -62,7 +62,31 @@ cancel.addEventListener('click', (event) => {
     display.innerText = "";
     operatorDisplay.innerText = "";
     enabled = true;
-})
+});
+
+const backspace = document.getElementById('backspace');
+backspace.addEventListener('click', (event) => {
+    if (equationStage === 1 || equationStage === 2) {
+        if (firstNumber.length > 1) {
+            firstNumber = firstNumber.slice(-0,-1);
+            display.innerText = firstNumber;
+        }
+        else {
+            firstNumber = "";
+            display.innerText = firstNumber;
+        }
+    }
+    else {
+        if (secondNumber.length > 1) {
+            secondNumber = secondNumber.slice(-0,-1);
+            display.innerText = secondNumber;
+        }
+        else {
+            secondNumber = "";
+            display.innerText = secondNumber;
+        }
+    }
+});
 
 const decimal = document.getElementById('decimal');
 decimal.addEventListener('click', (event) => {
@@ -132,6 +156,10 @@ function operate() {
             secondNumber = 0
             break;
         case "÷":
+            if (secondNumber === "0") {
+                display.innerText = "Nice Try"
+                break;
+            }
             answer = Number(firstNumber) / Number(secondNumber);
             if (answer.toString().length >= 7) {
                 display.innerText = answer.toFixed(8);
