@@ -2,6 +2,7 @@ let firstNumber = "";
 let secondNumber = "";
 let equationStage = 0;
 let operator;
+let enabled = true;
 
 const display = document.getElementById('displayBox');
 const operatorDisplay = document.getElementById('operatorSignal')
@@ -24,6 +25,7 @@ numbers.forEach((button) => {
             return;
         }
         if (!secondNumber && equationStage ===2) {
+            enabled = true;
             equationStage = 3;
         }
         secondNumber = numberSet(numberSelected, firstNumber, secondNumber, equationStage);
@@ -48,6 +50,71 @@ operators.forEach((button) => {
 
 const equals = document.getElementById('equals');
 equals.addEventListener('click', (event) => {
+    operate()
+});
+
+const cancel = document.getElementById('C');
+cancel.addEventListener('click', (event) => {
+    firstNumber = 0;
+    secondNumber = 0;
+    operator = 0;
+    answer = 0;
+    display.innerText = "";
+    operatorDisplay.innerText = "";
+    enabled = true;
+})
+
+const decimal = document.getElementById('decimal');
+decimal.addEventListener('click', (event) => {
+    console.log(enabled)
+    if (enabled === true) {
+        switch (equationStage) {
+            case 1:
+                firstNumber = firstNumber + ".";
+                enabled = false;
+                display.innerText = firstNumber;
+                console.log(firstNumber)
+                break;
+            case 2:
+                firstNumber = firstNumber + ".";
+                enabled = false;
+                display.innerText = firstNumber;
+                console.log(firstNumber)
+                break;
+            case 3:
+                secondNumber = secondNumber + ".";
+                enabled = false;
+                display.innerText = secondNumber;
+                console.log(secondNumber)
+                break;
+        }
+    }
+    else {
+        return;
+    }
+});
+
+
+function numberSet(numberSelected, firstNumber, secondNumber, equationStage) {
+    if (!firstNumber) {
+        firstNumber = numberSelected;
+        return firstNumber;
+    }
+    else if (firstNumber && equationStage === 1) {
+        newNumber = firstNumber + numberSelected;
+        return newNumber;
+    }
+    if (!secondNumber && equationStage === 3 ) {
+        secondNumber = numberSelected;
+        return secondNumber;
+    }
+    else if (secondNumber && equationStage === 3) {
+        newNumber = secondNumber + numberSelected;
+        return newNumber;
+    }
+}
+
+function operate() {
     let answer;
     equationStage = 0;
     operatorDisplay.innerText = ""
@@ -101,23 +168,4 @@ equals.addEventListener('click', (event) => {
             secondNumber = 0
             break;
     }
-});
-function numberSet(numberSelected, firstNumber, secondNumber, equationStage) {
-    if (!firstNumber) {
-        firstNumber = numberSelected;
-        return firstNumber;
-    }
-    else if (firstNumber && equationStage === 1) {
-        newNumber = firstNumber + numberSelected;
-        return newNumber;
-    }
-    if (!secondNumber && equationStage === 3 ) {
-        secondNumber = numberSelected;
-        return secondNumber;
-    }
-    else if (secondNumber && equationStage === 3) {
-        newNumber = secondNumber + numberSelected;
-        return newNumber;
-    }
-}
-
+};
