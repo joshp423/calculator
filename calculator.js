@@ -13,7 +13,8 @@ const numbers = document.querySelectorAll(".numbers");
 numbers.forEach((button) => {
     button.addEventListener('click', (event) => {
         let numberSelected = event.target.innerText
-        if (!firstNumber) {
+        if (!firstNumber || equationStage === 0) {
+            firstNumber = "";
             equationStage = 1;
             firstNumber = numberSet(numberSelected, firstNumber, secondNumber, equationStage);
             display.innerText = firstNumber;
